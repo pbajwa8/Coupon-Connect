@@ -13,6 +13,12 @@ class SwipeViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var PicView: UIImageView!
     @IBOutlet var secondPicView: UIImageView!
+    @IBOutlet var username1: UILabel!
+    @IBOutlet var age1: UILabel!
+    @IBOutlet var username2: UILabel!
+    @IBOutlet var age2: UILabel!
+    @IBOutlet var coupon1: UILabel!
+    @IBOutlet var coupon2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,52 +42,126 @@ class SwipeViewController: UIViewController {
         var query = PFUser.query()
         query!.whereKey("gender", equalTo:requestedGender)
         
+        var business = ["19" : "Dooleys", "1157" : "Las Sirenas", "11573" : "Coupon Wallet Booth 529", "13302" : "It's a Dollar and Resale"]
         query!.findObjectsInBackgroundWithBlock( { (NSArray objects, NSError error) in
             if error == nil {
+                var isOne = false
                 if let objects = objects {
                     for object in objects {
                         if object.objectForKey("coupon1") as! String == currentUserCoupon2 {
-                            
+                            isOne = true
                             let userImageFile = object["photo"] as! PFFile
                             userImageFile.getDataInBackgroundWithBlock {
                                 (imageData: NSData?, error: NSError?) -> Void in
                                 if error == nil {
                                     if let imageData = imageData {
                                         let image = UIImage(data:imageData)
-                                        self.secondPicView.image = image
+                                        self.PicView.contentMode = .ScaleAspectFit
+                                        self.PicView.image = image
+                                        self.username1.text = object.objectForKey("username") as! String
+                                        self.age1.text = object.objectForKey("age") as! String
+                                        //self.coupon1.text = object.objectForKey("coupon1") as! String
+                                        self.coupon1.text = business[currentUserCoupon2]
                                     }
                                 }
                             }
                     
-                        } else if object.objectForKey("coupon2") as! String == currentUserCoupon2 {
+                        }
+                        if object.objectForKey("coupon2") as! String == currentUserCoupon2 {
                             let userImageFile = object["photo"] as! PFFile
                             userImageFile.getDataInBackgroundWithBlock {
                                 (imageData: NSData?, error: NSError?) -> Void in
                                 if error == nil {
                                     if let imageData = imageData {
                                         let image = UIImage(data:imageData)
-                                        self.PicView.image = image
+                                        if(isOne == false){
+                                            isOne = true
+                                            self.PicView.contentMode = .ScaleAspectFit
+                                            self.PicView.image = image
+                                            self.username1.text = object.objectForKey("username") as! String
+                                            self.age1.text = object.objectForKey("age") as! String
+                                            //self.coupon1.text = object.objectForKey("coupon2") as! String
+                                            self.coupon1.text = business[currentUserCoupon2]
+                                            }
+                                        else{
+                                            self.secondPicView.contentMode = .ScaleAspectFit
+                                            self.secondPicView.image = image
+                                            self.username2.text = object.objectForKey("username") as! String
+                                            self.age2.text = object.objectForKey("age") as! String
+                                            //self.coupon2.text = object.objectForKey("coupon2") as! String
+                                            self.coupon2.text = business[currentUserCoupon2]
+                                            }
+                                        }
                                     }
                                 }
                             }
-
-                        } else if object.objectForKey("coupon1") as! String == currentUserCoupon1 {
+                        
+                        if object.objectForKey("coupon1") as! String == currentUserCoupon1 {
                             let userImageFile = object["photo"] as! PFFile
                             userImageFile.getDataInBackgroundWithBlock {
                                 (imageData: NSData?, error: NSError?) -> Void in
                                 if error == nil {
                                     if let imageData = imageData {
                                         let image = UIImage(data:imageData)
-                                        self.PicView.image = image
+                                        if(isOne == false){
+                                            isOne = true
+                                            self.PicView.contentMode = .ScaleAspectFit
+                                            self.PicView.image = image
+                                            self.username1.text = object.objectForKey("username") as! String
+                                            self.age1.text = object.objectForKey("age") as! String
+                                            //self.coupon1.text = object.objectForKey("coupon1") as! String
+                                            self.coupon1.text = business[currentUserCoupon1]
+                                        }
+                                        else{
+                                            self.secondPicView.contentMode = .ScaleAspectFit
+                                            self.secondPicView.image = image
+                                            self.username2.text = object.objectForKey("username") as! String
+                                            self.age2.text = object.objectForKey("age") as! String
+                                            //self.coupon2.text = object.objectForKey("coupon1") as! String
+                                            self.coupon2.text = business[currentUserCoupon1]
+                                        }
                                     }
                                 }
+                                
                             }
                         }
-                    }
+                        
+                        if object.objectForKey("coupon2") as! String == currentUserCoupon1 {
+                            let userImageFile = object["photo"] as! PFFile
+                            userImageFile.getDataInBackgroundWithBlock {
+                                (imageData: NSData?, error: NSError?) -> Void in
+                                if error == nil {
+                                    if let imageData = imageData {
+                                        let image = UIImage(data:imageData)
+                                        if(isOne == false){
+                                            isOne = true
+                                            self.PicView.contentMode = .ScaleAspectFit
+                                            self.PicView.image = image
+                                            self.username1.text = object.objectForKey("username") as! String
+                                            self.age1.text = object.objectForKey("age") as! String
+                                           // self.coupon1.text = object.objectForKey("coupon2") as! String
+                                            self.coupon1.text = business[currentUserCoupon1]
+                                        }
+                                        else{
+                                            self.secondPicView.contentMode = .ScaleAspectFit
+                                            self.secondPicView.image = image
+                                            self.username2.text = object.objectForKey("username") as! String
+                                            self.age2.text = object.objectForKey("age") as! String
+                                            //self.coupon1.text = object.objectForKey("coupon2") as! String
+                                            self.coupon1.text = business[currentUserCoupon1]
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+
+
+                        }
                 }
             }
         })
-        
+
         // Do any additional setup after loading the view.
         
         

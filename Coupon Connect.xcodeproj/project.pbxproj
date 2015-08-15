@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		024FA66F1B7EF78A00D0DA1B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024FA66E1B7EF78A00D0DA1B /* SwiftyJSON.swift */; };
+		024FA6711B7FAC0A00D0DA1B /* ccSplash.png in Resources */ = {isa = PBXBuildFile; fileRef = 024FA6701B7FAC0A00D0DA1B /* ccSplash.png */; };
+		024FA6731B7FC2D500D0DA1B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 024FA6721B7FC2D500D0DA1B /* background.png */; };
 		029128AE1B7EBEF2002ED615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029128AD1B7EBEF2002ED615 /* AppDelegate.swift */; };
 		029128B31B7EBEF2002ED615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029128B11B7EBEF2002ED615 /* Main.storyboard */; };
 		029128B51B7EBEF2002ED615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029128B41B7EBEF2002ED615 /* Images.xcassets */; };
@@ -44,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		024FA66E1B7EF78A00D0DA1B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		024FA6701B7FAC0A00D0DA1B /* ccSplash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccSplash.png; sourceTree = "<group>"; };
+		024FA6721B7FC2D500D0DA1B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		029128A81B7EBEF2002ED615 /* Coupon Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coupon Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029128AC1B7EBEF2002ED615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029128AD1B7EBEF2002ED615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 		029128AA1B7EBEF2002ED615 /* Coupon Connect */ = {
 			isa = PBXGroup;
 			children = (
+				024FA6721B7FC2D500D0DA1B /* background.png */,
+				024FA6701B7FAC0A00D0DA1B /* ccSplash.png */,
 				024FA66E1B7EF78A00D0DA1B /* SwiftyJSON.swift */,
 				029128F51B7ECBA6002ED615 /* SignUpViewController.swift */,
 				029128F31B7ECB92002ED615 /* SwipeViewController.swift */,
@@ -266,6 +272,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				024FA6711B7FAC0A00D0DA1B /* ccSplash.png in Resources */,
+				024FA6731B7FC2D500D0DA1B /* background.png in Resources */,
 				029128B31B7EBEF2002ED615 /* Main.storyboard in Resources */,
 				029128B81B7EBEF2002ED615 /* LaunchScreen.xib in Resources */,
 				029128B51B7EBEF2002ED615 /* Images.xcassets in Resources */,
