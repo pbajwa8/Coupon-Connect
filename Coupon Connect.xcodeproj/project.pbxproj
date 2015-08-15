@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		029128AE1B7EBEF2002ED615 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029128AD1B7EBEF2002ED615 /* AppDelegate.swift */; };
-		029128B01B7EBEF2002ED615 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029128AF1B7EBEF2002ED615 /* ViewController.swift */; };
 		029128B31B7EBEF2002ED615 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029128B11B7EBEF2002ED615 /* Main.storyboard */; };
 		029128B51B7EBEF2002ED615 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029128B41B7EBEF2002ED615 /* Images.xcassets */; };
 		029128B81B7EBEF2002ED615 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 029128B61B7EBEF2002ED615 /* LaunchScreen.xib */; };
@@ -26,6 +25,10 @@
 		029128E21B7EC1C8002ED615 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 029128E11B7EC1C8002ED615 /* libsqlite3.dylib */; };
 		029128E41B7EC1E0002ED615 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029128E31B7EC1E0002ED615 /* Parse.framework */; };
 		029128E61B7EC1E6002ED615 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 029128E51B7EC1E6002ED615 /* Bolts.framework */; };
+		029128F01B7ECB32002ED615 /* ProfileControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029128EF1B7ECB32002ED615 /* ProfileControllerViewController.swift */; };
+		029128F41B7ECB92002ED615 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029128F31B7ECB92002ED615 /* SwipeViewController.swift */; };
+		029128F61B7ECBA6002ED615 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029128F51B7ECBA6002ED615 /* SignUpViewController.swift */; };
+		029128F81B7ECC45002ED615 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029128F71B7ECC45002ED615 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +45,6 @@
 		029128A81B7EBEF2002ED615 /* Coupon Connect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coupon Connect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		029128AC1B7EBEF2002ED615 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		029128AD1B7EBEF2002ED615 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		029128AF1B7EBEF2002ED615 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		029128B21B7EBEF2002ED615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		029128B41B7EBEF2002ED615 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		029128B71B7EBEF2002ED615 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -63,6 +65,10 @@
 		029128E31B7EC1E0002ED615 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		029128E51B7EC1E6002ED615 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		029128E71B7EC201002ED615 /* Coupon Connect-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Coupon Connect-Bridging-Header.h"; sourceTree = "<group>"; };
+		029128EF1B7ECB32002ED615 /* ProfileControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileControllerViewController.swift; sourceTree = "<group>"; };
+		029128F31B7ECB92002ED615 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwipeViewController.swift; path = ../SwipeViewController.swift; sourceTree = "<group>"; };
+		029128F51B7ECBA6002ED615 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ../SignUpViewController.swift; sourceTree = "<group>"; };
+		029128F71B7ECC45002ED615 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +125,12 @@
 		029128AA1B7EBEF2002ED615 /* Coupon Connect */ = {
 			isa = PBXGroup;
 			children = (
+				029128F51B7ECBA6002ED615 /* SignUpViewController.swift */,
+				029128F31B7ECB92002ED615 /* SwipeViewController.swift */,
+				029128EF1B7ECB32002ED615 /* ProfileControllerViewController.swift */,
 				029128AD1B7EBEF2002ED615 /* AppDelegate.swift */,
-				029128AF1B7EBEF2002ED615 /* ViewController.swift */,
 				029128B11B7EBEF2002ED615 /* Main.storyboard */,
+				029128F71B7ECC45002ED615 /* LoginViewController.swift */,
 				029128B41B7EBEF2002ED615 /* Images.xcassets */,
 				029128B61B7EBEF2002ED615 /* LaunchScreen.xib */,
 				029128AB1B7EBEF2002ED615 /* Supporting Files */,
@@ -274,8 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				029128B01B7EBEF2002ED615 /* ViewController.swift in Sources */,
+				029128F01B7ECB32002ED615 /* ProfileControllerViewController.swift in Sources */,
 				029128AE1B7EBEF2002ED615 /* AppDelegate.swift in Sources */,
+				029128F61B7ECBA6002ED615 /* SignUpViewController.swift in Sources */,
+				029128F81B7ECC45002ED615 /* LoginViewController.swift in Sources */,
+				029128F41B7ECB92002ED615 /* SwipeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +498,7 @@
 				029128C91B7EBEF2002ED615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		029128CA1B7EBEF2002ED615 /* Build configuration list for PBXNativeTarget "Coupon ConnectTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +507,7 @@
 				029128CC1B7EBEF2002ED615 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
