@@ -115,6 +115,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="signUp:" destination="Bq4-Jj-2GV" eventType="touchUpInside" id="TEG-eY-oyT"/>
                                     <segue destination="zS2-rJ-79W" kind="push" identifier="SignUp" id="y8o-bK-mNf"/>
                                 </connections>
                             </button>
@@ -137,6 +138,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Swx-Rc-IQZ"/>
+                    <connections>
+                        <outlet property="ageField" destination="jIN-dv-Bo2" id="VMu-fY-dIk"/>
+                        <outlet property="genderField" destination="C0N-qC-GUx" id="1zm-aE-PwU"/>
+                        <outlet property="passwordField" destination="eIs-9x-ryw" id="xgQ-mc-QLs"/>
+                        <outlet property="usernameField" destination="fXY-lW-mHe" id="IWQ-di-wCR"/>
+                        <outlet property="zipcodeField" destination="bx8-sq-aSj" id="77v-cn-aua"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgj-le-7di" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,7 +226,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Nj4-Eg-ynV"/>
-        <segue reference="T9h-2S-N9c"/>
+        <segue reference="zNY-2x-3lP"/>
+        <segue reference="y8o-bK-mNf"/>
     </inferredMetricsTieBreakers>
 </document>
