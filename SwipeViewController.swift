@@ -11,6 +11,8 @@ import UIKit
 class SwipeViewController: UIViewController {
 
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var PicView: UIImageView!
+    @IBOutlet var secondPicView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,52 +41,41 @@ class SwipeViewController: UIViewController {
                 if let objects = objects {
                     for object in objects {
                         if object.objectForKey("coupon1") as! String == currentUserCoupon2 {
-                            var matches = PFObject(className:"matches")
-                            matches["currentUser"] = currentUserUsername
-                            matches["matchedUser"] = object.objectForKey("username") as! String
-                            matches["age"] = object.objectForKey("age") as! String
-                            matches["matchedCoupon"] = currentUserCoupon2
-                            matches["photo"] = object.objectForKey("photo")
-                            matches.saveInBackgroundWithBlock {
-                                (success: Bool, error: NSError?) -> Void in
-                                if (success) {
-                                   print("saved")
-                                } else {
-                                    print("fuck this shit")
+                            
+                            let userImageFile = object["photo"] as! PFFile
+                            userImageFile.getDataInBackgroundWithBlock {
+                                (imageData: NSData?, error: NSError?) -> Void in
+                                if error == nil {
+                                    if let imageData = imageData {
+                                        let image = UIImage(data:imageData)
+                                        self.secondPicView.image = image
+                                    }
                                 }
                             }
+                    
                         } else if object.objectForKey("coupon2") as! String == currentUserCoupon2 {
-                            var matches = PFObject(className:"matches")
-                            matches["currentUser"] = currentUserUsername
-                            matches["matchedUser"] = object.objectForKey("username") as! String
-                            matches["age"] = object.objectForKey("age") as! String
-                            matches["photo"] = object.objectForKey("photo")
-                            matches["matchedCoupon"] = currentUserCoupon2
-                            matches.saveInBackgroundWithBlock {
-                                (success: Bool, error: NSError?) -> Void in
-                                if (success) {
-                                    print("saved")
-                                } else {
-                                    print("fuck this shit")
+                            let userImageFile = object["photo"] as! PFFile
+                            userImageFile.getDataInBackgroundWithBlock {
+                                (imageData: NSData?, error: NSError?) -> Void in
+                                if error == nil {
+                                    if let imageData = imageData {
+                                        let image = UIImage(data:imageData)
+                                        self.PicView.image = image
+                                    }
                                 }
                             }
 
                         } else if object.objectForKey("coupon1") as! String == currentUserCoupon1 {
-                            var matches = PFObject(className:"matches")
-                            matches["currentUser"] = currentUserUsername
-                            matches["matchedUser"] = object.objectForKey("username") as! String
-                            matches["age"] = object.objectForKey("age") as! String
-                            matches["photo"] = object.objectForKey("photo")
-                            matches["matchedCoupon"] = currentUserCoupon1
-                            matches.saveInBackgroundWithBlock {
-                                (success: Bool, error: NSError?) -> Void in
-                                if (success) {
-                                    print("saved")
-                                } else {
-                                    print("fuck this shit")
+                            let userImageFile = object["photo"] as! PFFile
+                            userImageFile.getDataInBackgroundWithBlock {
+                                (imageData: NSData?, error: NSError?) -> Void in
+                                if error == nil {
+                                    if let imageData = imageData {
+                                        let image = UIImage(data:imageData)
+                                        self.PicView.image = image
+                                    }
                                 }
                             }
-
                         }
                     }
                 }
@@ -102,6 +93,7 @@ class SwipeViewController: UIViewController {
     }
     
 
+   
     /*
     // MARK: - Navigation
 
