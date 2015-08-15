@@ -8,18 +8,22 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var usernameField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var ageField: UITextField!
     @IBOutlet var genderField: UITextField!
     @IBOutlet var zipcodeField: UITextField!
+    @IBOutlet var profileImage: UIImageView!
+    
+    let imagePicker = UIImagePickerController()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBarHidden = true
+        imagePicker.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -27,6 +31,26 @@ class SignUpViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func loadImage(sender: AnyObject) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            profileImage.contentMode = .ScaleAspectFit
+            profileImage.image = pickedImage
+        }
+        
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func signUp(sender: AnyObject) {
@@ -54,6 +78,11 @@ class SignUpViewController: UIViewController {
                     let json = JSON(data: data)
                     userId = json["u"].string as String!
                     var user = PFUser()
+                    
+                    let imageData = UIImageJPEGRepresentation(self.profileImage.image, 1.0)
+                    let imageFile = PFFile(name:"image.jpg", data:imageData)
+                    imageFile.save()
+               
                     user.username = self.usernameField.text
                     user.password = self.passwordField.text
                     user["age"] = self.ageField.text
@@ -61,11 +90,14 @@ class SignUpViewController: UIViewController {
                     user["zipcode"] = self.zipcodeField.text
                     user["userId"] = userId
                     
+                    user.setObject(imageFile, forKey: "photo")
+                    
                     user.signUpInBackgroundWithBlock {
                         (succeeded: Bool, error: NSError?) -> Void in
                         if let error = error {
                             let errorString = error.userInfo?["error"] as? NSString
                             println(errorString)
+                            println("THIS IS AN ERROR")
                         } else {
                             println("User Created")
                         }
